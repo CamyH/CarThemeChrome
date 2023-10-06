@@ -1,4 +1,11 @@
 {
+  "name": "car-theme-chrome",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack --config webpack/webpack.config.js"
+  },
   "devDependencies": {
     "@types/chrome": "^0.0.246",
     "copy-webpack-plugin": "^11.0.0",
