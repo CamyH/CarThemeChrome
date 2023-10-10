@@ -4,7 +4,19 @@
   "description": "A collection of performance car photos",
   "version": "1.0",
   "permissions": ["activeTab", "scripting"],
+  "web_accessible_resources": [
+    {
+      "matches": ["<all_urls>"],
+      "resources": ["/images/wallpapers/*"]
+    }
+  ],
   "background": {
     "service_worker": "background.js"
-  }
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["/wallpapers.js"]
+    }
+  ]
 }
