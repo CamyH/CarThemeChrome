@@ -4,14 +4,14 @@ module.exports = {
    mode: "production",
    entry: {
       background: path.resolve(__dirname, "..", "src", "background.ts"),
-      wallpapers: path.resolve(__dirname, '..', 'src', 'wallpapers.ts'),
+      wallpapers: path.resolve(__dirname, '..', 'src', 'wallpapers.ts')
    },
    output: {
       path: path.join(__dirname, "../dist"),
       filename: "[name].js",
    },
    resolve: {
-      extensions: [".ts", ".js"],
+      extensions: [".ts", ".js", ".html"],
    },
    module: {
       rules: [
@@ -23,7 +23,12 @@ module.exports = {
          {
             test: /\.(png|jpe?g|gif)$/i,
             loader: 'file-loader'
-          }  
+          },
+          {
+            test: /\.html$/,
+            exclude: /node_modules/,
+            loader: "html-loader"
+        }
       ],
    },
    plugins: [
